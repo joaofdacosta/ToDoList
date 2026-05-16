@@ -43,7 +43,7 @@ export default function App() {
   const [selectedEmoji, setSelectedEmoji] = useState('💆‍♂️');
   const [emojiPickerAberto, setEmojiPickerAberto] = useState(false);
   
-  // Novo estado para controlar se estamos editando ou criando
+  // controlar se estamos editando ou criando
   const [tarefaEditandoId, setTarefaEditandoId] = useState(null);
 
   const loadedRef = useRef(false);
@@ -76,7 +76,7 @@ export default function App() {
     saveTasks();
   }, [tasks]);
 
-  // Modificado para resetar os estados de edicao
+  // resetar os estados de edicao
   function fecharModal() {
     Keyboard.dismiss();
     setModalVisivel(false);
@@ -114,7 +114,7 @@ export default function App() {
     fecharModal();
   }
 
-  // Nova funcao: Excluir Tarefa
+  // Funcao: Excluir Tarefa
   function deletarTarefa(id) {
     Alert.alert("Excluir Tarefa", "Tem certeza que deseja apagar essa tarefa?", [
       { text: "Cancelar", style: "cancel" },
@@ -124,7 +124,7 @@ export default function App() {
     ]);
   }
 
-  // Nova funcao: Iniciar modo de edicao
+  // Funcao: Iniciar modo de edicao
   function iniciarEdicao(task) {
     setTarefaEditandoId(task.id);
     setNovaTarefa(task.text);
